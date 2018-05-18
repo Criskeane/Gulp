@@ -1,3 +1,46 @@
-.testing {
-    width: percentage(5/7);
+/*====================================================================================
+■01.Content PAGE 
+====================================================================================*/
+@import "normalize";
+@import "variables";
+@import "modules";
+@import "typography";
+@import "layout";
+
+// Responsive
+@import "mobile";
+@import "tablet";
+@import "desktop";
+
+$cl: #24afff;
+.color{
+    color: #24afff;
 }
+
+
+.tit_page {
+  background: url(../common_img/bgmain.png) no-repeat center;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  height: 180px;
+    text-align: center;
+    h2{
+        text-align: center;
+        color: #fff;
+        font-size: 36px;
+        line-height: 180px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
