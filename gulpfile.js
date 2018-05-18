@@ -1,5 +1,3 @@
-'use strict';
-
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
@@ -40,7 +38,7 @@ gulp.task('sass', function() {
 gulp.task('useref', function(){
     return gulp.src('../app/css/*.css')
     .pipe(useref())
-    .pipe(gulpIf('*.css', cssnano()))
+    //.pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('../dist/css'))
 })
 
