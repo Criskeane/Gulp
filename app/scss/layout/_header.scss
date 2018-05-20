@@ -2,10 +2,18 @@
 ■HEADER
 ============================================*/
 header {
-    background: #000;
-    padding: 3%;
+    background: #999;
+    padding: 0 3%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9;
     h3{
         font-size: 20px;
         color: #fff;
     }
 }
+/*==========================================
+■HEADER
+============================================*/

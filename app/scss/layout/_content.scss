@@ -1,4 +1,12 @@
 .main_page{
     background: #ccc;
     padding: 3%;
+    section{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+article{
+    width: 70%;
 }
