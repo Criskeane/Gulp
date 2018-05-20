@@ -22,6 +22,10 @@ var gulp = require('gulp'),
     del = require('del'),
     sourcemap = require('gulp-sourcemaps'),
     changed = require('gulp-changed'),
+    inject = require('gulp-inject'),
+    runSequence = require('run-sequence'),
+    bowerFile = require('main-bower-files'),
+    es = require('event-stream'),
 
     //development mode?
     devBuild = (process.env.NODE_ENV !== 'production'),
@@ -32,20 +36,51 @@ var gulp = require('gulp'),
         build: 'build/'
     };
 
-//export const clean = () => del(['build']);
+// var paths = {
+//     src: 'app/**/*',
+//     srcHTML: 'app/**/*.html',
+//     srcSCSS: 'app/**/*.scss',
+//     srcJS:  'app/**/*.js',
+
+//     tmp: 'tmp',
+//     tmpIndex: 'tmp/index.html',
+//     tmpCSS: 'tmp/**/*.css',
+//     tmpJS: 'tmp/**/*.js',
+  
+//     builddev: 'build',
+//     builddevHTML: 'build/index.html',
+//     builddevCSS: 'build/**/*.css',
+//     builddevJS: 'build/**/*.js'
+// }
+
+
+//CLEAN BUILD
 gulp.task('clean', function(){
     return del(['build'])
+});
+
+//INJECT FILE
+gulp.task('inject', function(){
+    var source = gulp.src([
+        folder.build + '**/*.css', folder.build + '**/*.js'
+    ])
+
+    gulp.src(folder.build + '**/*.html')
+    .pipe(inject(
+        source, {ignorePath: 'build', addRootSlash: false }
+    ))
+    .pipe(gulp.dest('./build'));
 });
 
 //COPY FILE 
 gulp.task('copy', function(){
     var pathjs = folder.src + '/js/jquery.min.js';
-    var pathfont = folder.src + 'fonts/**/*';
-    var dest = 'build';
+    //var pathfont = folder.src + 'fonts/**/*';
+    var dests = 'build';
 
-    return gulp.src([pathjs, pathfont])
-    .pipe(changed(dest))
-    .pipe(gulp.dest(dest + '/js'));
+    return gulp.src(pathjs)
+    .pipe(changed(dests))
+    .pipe(gulp.dest(dests + '/js'));
 });
 
 //SPIN UP A SERVER
@@ -129,7 +164,9 @@ gulp.task('scss', ['imagemin'], function(){
     }))
 });
 
-gulp.task('run', ['clean', 'html', 'scss', 'js', 'copy']);
+gulp.task('run', function(){
+    runSequence('clean', 'html', 'scss', 'js', 'copy');
+});
 
 gulp.task('watch',['browserSync', 'html', 'scss'], function(){
     //image changes
@@ -145,4 +182,6 @@ gulp.task('watch',['browserSync', 'html', 'scss'], function(){
     gulp.watch(folder.src + '**/**/*.scss', ['scss']);
 });
 
-gulp.task('default', ['run', 'watch']);
+gulp.task('default', function(){
+    runSequence('run', 'watch', 'inject');
+});
