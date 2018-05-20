@@ -1,0 +1,49 @@
+/*==========================================
+■HOME
+============================================*/
+.color{
+    color: #24afff;
+}
+
+.tit_page {
+    background: url(../common_img/bgmain.png) no-repeat center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    height: 180px;
+    text-align: center;
+    h2{
+        text-align: center;
+        color: #fff;
+        font-size: 36px;
+        line-height: 180px;
+    }
+}
+
+.cd-trigger h4{
+    @include mobile-only {
+		font-size: 10px;
+    }
+    @include mobile-landscape {
+		font-size: 15px;
+    }
+    @include tablet-portrait {
+		font-size: 30px;
+    }
+    @include tablet-landscape {
+		font-size: 45px;
+    }
+    @include desktop {
+        font-size: 60px;
+    }
+}
+
+
+
+
+
+
+
+
+
+

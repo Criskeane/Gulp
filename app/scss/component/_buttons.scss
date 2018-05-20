@@ -1,0 +1,89 @@
+/*==========================================
+■BUTTONS
+============================================*/
+.btnhover {
+    display: inline-block;
+    text-transform: uppercase;
+    background: #fff;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.25s ease;
+    border: 1px solid #000;
+    a{
+        text-decoration: none;
+        color: #000;
+        font-size: 18px;
+        font-weight: bold;
+        position: relative;
+        width: 300px;
+        height: 60px;
+        display: inline-block;
+        line-height: 60px;
+        z-index: 2;
+        &:after{
+            position: absolute;
+            content: "\f105";
+            right: 5%;
+            top: -1px;
+            font-family: FontAwesome;
+            font-size: 20px;
+            font-weight: normal;
+        }
+    }
+}
+
+.btnhover:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #000;
+    transform-origin: left;
+    transition: width 0.25s ease;
+    z-index: 1;
+}
+
+.btnhover:hover:after {
+    width: 100%;
+}
+
+.btnhover:hover{
+    border: 1px solid #000;
+    a{
+        color: #fff;
+    }
+}
+
+.ahover{
+    position: relative;
+    a:before, a:after {
+      position: absolute;
+      -webkit-transition: all 0.35s ease;
+      transition: all 0.35s ease;
+    }
+    a:before {
+      bottom: 10px;
+      display: block;
+      height: 3px;
+      width: 0%;
+      content: "";
+      background-color: #000;
+    }
+    a:after {
+      left: 0;
+      top: 0;
+      position: absolute;
+      content: "";
+      overflow: hidden;
+        display: none;
+    }
+    a:hover{
+        opacity: 1;
+    }
+    a:hover:before {
+      opacity: 1;
+      width: 100%;
+    }
+}

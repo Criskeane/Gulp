@@ -1,0 +1,44 @@
+/*==========================================
+■MIXINS
+============================================*/
+
+
+/*==========================================
+■MEDIA
+============================================*/
+$mobile-portrait	: 320px !default;
+$mobile-landscape	: 480px !default;
+$tablet-portrait	: 768px !default;
+$tablet-landscape	: 1024px !default;
+$desktop	        : 1382px !default;
+
+// media queries
+@mixin mobile-only {
+	@media only screen and (min-width : $mobile-portrait) {
+		@content;
+	}
+}
+
+@mixin mobile-landscape {
+	@media only screen and (min-width : $mobile-landscape) {
+		@content;
+	}
+}
+
+@mixin tablet-portrait {
+  @media only screen and (min-width : $tablet-portrait) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media only screen and (min-width : $tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width : $desktop) {
+    @content;
+  }
+}

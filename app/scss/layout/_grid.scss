@@ -1,0 +1,35 @@
+/*==========================================
+■GIRD FLEX
+============================================*/
+.flexrowbetween{
+    display: flex;
+    justify-content: space-between;
+	flex-wrap: wrap;
+    flex-direction: row;
+}
+.flexrowcenter{
+    display: flex;
+    justify-content: center;
+	flex-wrap: wrap;
+    flex-direction: row;
+}
+/*align-items*/
+.flex_alignstart{
+    align-items: flex-start;
+}
+.flex_alignend{
+    align-items: flex-end;
+}
+.flex_alignstretch{
+    align-items: stretch;
+}
+.flex_alignbaseline{
+    align-items: baseline;
+}
+.flex_aligncenter{
+    align-items: center;
+}
+.flex_alignini{
+    align-items: initial;
+}
+

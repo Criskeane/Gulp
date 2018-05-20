@@ -59,7 +59,6 @@ $(".navmenu li").hover(
     }
 );
 
-
 (function ($) {
     $(document).ready(function () {
       var f = $('#footer').height();
