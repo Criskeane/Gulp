@@ -1,12 +1,14 @@
 /*==========================================
 ■CONTACT_PAGE
 ============================================*/
+@import '../scss/generic/variables';
+@import '../scss/generic/mixins';
 .contact{
     p{
         color: #24afff;
         font-size: 40px;
         padding: 20px;
-        //background: $color-page;
+        background: $color-page;
     }
     li{
         list-style: none;

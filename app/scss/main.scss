@@ -3,6 +3,6 @@
 ============================================*/
 //@import 'normalize';
 @import '../../node_modules/bootstrap/scss/bootstrap';
-@import 'generic/generic';
-@import 'component/component';
-@import 'layout/layout';
+@import '../scss/generic/generic';
+@import '../scss/component/component';
+@import '../scss/layout/layout';

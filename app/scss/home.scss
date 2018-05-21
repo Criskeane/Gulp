@@ -1,7 +1,8 @@
 /*==========================================
 ■HOME
 ============================================*/
-//@import '../generic/mixins';
+@import '../scss/generic/variables';
+@import '../scss/generic/mixins';
 .color{
     //color: $color-page;
 }
@@ -20,29 +21,29 @@ aside{
     text-align: center;
     h5{
         text-align: center;
-        //color: $color-darkblue;
+        color: $color-darkblue;
         font-size: 36px;
         line-height: 180px;
     }
 }
 
-// .cd-trigger h4{
-//     @include mobile-only {
-// 		font-size: 10px;
-//     }
-//     @include mobile-landscape {
-// 		font-size: 15px;
-//     }
-//     @include tablet-portrait {
-// 		font-size: 30px;
-//     }
-//     @include tablet-landscape {
-// 		font-size: 45px;
-//     }
-//     @include desktop {
-//         font-size: 60px;
-//     }
-// }
+.cd-trigger h4{
+    @include mobile-only {
+		font-size: 10px;
+    }
+    @include mobile-landscape {
+		font-size: 15px;
+    }
+    @include tablet-portrait {
+		font-size: 30px;
+    }
+    @include tablet-landscape {
+		font-size: 45px;
+    }
+    @include desktop {
+        font-size: 60px;
+    }
+}
 
 /*==========================================
 ■HOME
